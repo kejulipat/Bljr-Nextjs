@@ -1,15 +1,23 @@
 import Link from "next/link";
 
+import BeritaCard from "@/components/BeritaCard";
+import SectionTitle from "@/components/SectionTitle";
+import { berita } from "@/data/berita";
+
 export default function BeritaPage() {
-    return (
-        <main className="p-8 max-w-lg mx-auto space-y-4">
-            <h1 className="text-3xl font-bold">Berita Terbaru</h1>
-            <p className="text-gray-600">
-                Halaman ini menampilkan berita terbaru dari berbagai sumber.
-            </p>
-            <Link href="/" className="inline-block bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition">
-                Kembali ke halaman utama 
-            </Link>
-        </main>
-    )
+  return (
+    <section className="mx-auto max-w-7xl space-y-8 px-6 py-12 sm:py-16">
+      <header className="space-y-4">
+        <SectionTitle judul="Berita Terbaru" />
+        <p className="max-w-2xl leading-relaxed text-gray-700">
+          Informasi dan pengumuman untuk warga sekolah.
+        </p>
+      </header>
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {berita.map((item) => (
+          <BeritaCard key={item.id} berita={item} />
+        ))}
+      </div>
+    </section>
+  );
 }

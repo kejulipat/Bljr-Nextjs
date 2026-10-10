@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title">
+  <title id="title">Placeholder gambar berita</title>
+  <rect width="1600" height="900" fill="#eef2e8"/>
+  <rect x="180" y="140" width="1240" height="620" rx="36" fill="#d5e3d8"/>
+  <circle cx="480" cy="355" r="110" fill="#f1c66a"/>
+  <path d="m220 700 350-270 220 170 210-240 380 340z" fill="#4c9277"/>
+  <text x="800" y="820" text-anchor="middle" font-family="Arial, sans-serif" font-size="48" font-weight="700" fill="#173d35">PLACEHOLDER BERITA 16:9</text>
+</svg>
