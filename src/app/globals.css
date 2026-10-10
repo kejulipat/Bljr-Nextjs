@@ -1,1 +1,27 @@
 @import "tailwindcss";
+
+@theme inline {
+  --color-navy: #00264d;
+  --color-brand: #21669e;
+  --color-brand-dark: #184d7a;
+  --color-link: #1b62a8;
+  --color-accent: #ffd100;
+  --color-surface: #f5f7fa;
+  --color-line: #d9dee5;
+  --color-ink: #1f2937;
+  --font-heading: var(--font-roboto-slab), Georgia, serif;
+  --font-body: var(--font-lato), system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-surface font-body text-ink;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-heading;
+  }
+}

@@ -1,27 +1,36 @@
+import {
+  InstagramIcon,
+  MailIcon,
+  PhoneIcon,
+  YouTubeIcon,
+} from "@/components/Icons";
+import Container from "@/components/Container";
 import { school } from "@/data/school";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-green-100 bg-green-950 text-green-50">
-      <div className="mx-auto grid max-w-7xl gap-8 px-6 py-10 sm:grid-cols-2">
+    <footer className="border-t-4 border-accent bg-navy text-white">
+      <Container className="grid gap-8 py-10 sm:grid-cols-2">
         <div>
-          <h2 className="text-lg font-semibold">{school.identity.nameFull}</h2>
-          <address className="mt-3 not-italic leading-relaxed text-green-100">
+          <h2 className="font-heading text-lg font-bold">
+            {school.identity.nameFull}
+          </h2>
+          <address className="mt-3 space-y-2 not-italic leading-relaxed text-white/90">
             <p>{school.contact.address.full}</p>
-            <p>
-              Telepon:{" "}
+            <p className="flex items-center gap-2">
+              <PhoneIcon className="size-4 shrink-0 text-accent" />
               <a
-                className="underline decoration-green-400 underline-offset-4 hover:text-white"
                 href={`tel:${school.contact.phone.replace(/[^\d+]/g, "")}`}
+                className="rounded underline underline-offset-4 hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
               >
                 {school.contact.phone}
               </a>
             </p>
-            <p>
-              Email:{" "}
+            <p className="flex items-center gap-2">
+              <MailIcon className="size-4 shrink-0 text-accent" />
               <a
-                className="underline decoration-green-400 underline-offset-4 hover:text-white"
                 href={`mailto:${school.contact.email}`}
+                className="rounded underline underline-offset-4 hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
               >
                 {school.contact.email}
               </a>
@@ -29,16 +38,17 @@ export default function Footer() {
           </address>
         </div>
         <div>
-          <h2 className="font-semibold">Media sosial</h2>
-          <ul className="mt-3 flex flex-wrap gap-4 text-green-100">
+          <h2 className="font-heading font-bold">Media Sosial</h2>
+          <ul className="mt-3 flex gap-3">
             <li>
               <a
                 href={school.social.youtube}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded underline decoration-green-400 underline-offset-4 hover:text-white"
+                aria-label="YouTube SMAN 3 Kota Serang"
+                className="flex size-11 items-center justify-center rounded-full border-2 border-white transition hover:bg-white hover:text-navy focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
               >
-                YouTube
+                <YouTubeIcon className="size-5" />
               </a>
             </li>
             <li>
@@ -46,17 +56,20 @@ export default function Footer() {
                 href={school.social.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded underline decoration-green-400 underline-offset-4 hover:text-white"
+                aria-label="Instagram SMAN 3 Kota Serang"
+                className="flex size-11 items-center justify-center rounded-full border-2 border-white transition hover:bg-white hover:text-navy focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
               >
-                Instagram
+                <InstagramIcon className="size-5" />
               </a>
             </li>
           </ul>
         </div>
+      </Container>
+      <div className="border-t border-white/30">
+        <Container className="py-4 text-center text-sm text-white/90">
+          <p>© 2026 {school.identity.nameFull}</p>
+        </Container>
       </div>
-      <p className="border-t border-green-800 px-6 py-4 text-center text-sm text-green-100">
-        © 2026 {school.identity.nameFull}
-      </p>
     </footer>
   );
 }

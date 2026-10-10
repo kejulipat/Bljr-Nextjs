@@ -30,7 +30,9 @@ rules:
 - email: info@sman3kotaserang.sch.id
 - whatsapp: [TODO]
 - office_hours: [TODO]
-- google_maps_embed_url: [TODO]
+- coordinates: -6.1141, 106.1354 (koordinat dari Google Maps, diberikan pemilik proyek)
+- google_maps_embed_url: https://www.google.com/maps?q=-6.1141,106.1354&z=16&output=embed (koordinat dari Google Maps, diberikan pemilik proyek)
+- google_maps_url: https://www.google.com/maps?q=-6.1141,106.1354 (koordinat dari Google Maps, diberikan pemilik proyek)
 
 # 3. social
 - youtube: https://www.youtube.com/@smanthreechannel

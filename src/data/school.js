@@ -20,7 +20,10 @@ export const school = {
     email: "info@sman3kotaserang.sch.id",
     whatsapp: null,
     officeHours: null,
-    googleMapsEmbedUrl: null,
+    coordinates: { lat: -6.1141, lng: 106.1354 },
+    googleMapsEmbedUrl:
+      "https://www.google.com/maps?q=-6.1141,106.1354&z=16&output=embed",
+    googleMapsUrl: "https://www.google.com/maps?q=-6.1141,106.1354",
   },
   social: {
     youtube: "https://www.youtube.com/@smanthreechannel",
@@ -57,7 +60,7 @@ export const school = {
     {
       key: "adiwiyata",
       value: "Adiwiyata tingkat Provinsi Banten",
-      year: "since 2017",
+      year: "Sejak 2017",
     },
     {
       key: "designations",
@@ -77,7 +80,8 @@ Kepala Sekolah
 Edi Sutedi, S.Pd, M.Si`, // TODO: ganti dengan teks asli
   images: {
     logo: "/placeholder-logo.svg",
-    hero: "/placeholder-hero.svg",
+    hero: "/placeholder-hero.jpg",
+    kepalaSekolah: "/placeholder-kepsek.svg", // TODO: ganti dengan foto asli
     additional: ["/placeholder-berita.svg"],
   },
 };

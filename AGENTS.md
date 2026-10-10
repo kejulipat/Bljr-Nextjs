@@ -20,3 +20,5 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 - Sebelum menulis kode Next.js, baca panduan relevan di `node_modules/next/dist/docs/`. Jika panduan itu bertentangan dengan instruksi prompt soal sintaks Next.js, ikuti panduan.
 - Jangan menghapus atau mengubah file asli di `public/`.
 - Gunakan bahasa Indonesia untuk teks tampilan, alt text, dan komentar kode.
+- Warna dan font dipusatkan sebagai token di `src/app/globals.css` (`navy`, `brand`, `brand-dark`, `link`, `accent`, `surface`, `line`, `ink`, `font-heading`, `font-body`). Jangan hard-code hex di component dan jangan pakai kelas `green-*`.
+- Semua section (pita header, bar menu, hero, konten halaman, footer) dibungkus `<Container />` (`src/components/Container.js`) agar tepi kiri-kanan selalu sejajar. Jangan menulis ulang `max-w-7xl px-6` di tempat lain.

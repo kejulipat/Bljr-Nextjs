@@ -1,47 +1,41 @@
 import Image from "next/image";
 import Link from "next/link";
+import Container from "@/components/Container";
 
-export default function Hero({ judul, tagline, gambar, logo, tombol }) {
+export default function Hero({ judul, tagline, gambar, tombol }) {
   return (
-    <section className="relative isolate aspect-[16/9] min-h-80 overflow-hidden bg-green-950 text-white sm:min-h-[28rem]">
-      <Image
-        src={gambar}
-        alt={`Ilustrasi ${judul}`}
-        fill
-        sizes="100vw"
-        className="object-cover"
-        unoptimized={gambar.endsWith(".svg")}
-        priority
-      />
-      <div className="absolute inset-0 bg-green-950/65" />
-      <div className="relative mx-auto flex h-full max-w-7xl flex-col items-center justify-center gap-5 px-6 py-12 text-center">
-        {logo ? (
-          <span className="relative aspect-square w-20 overflow-hidden rounded-full border-2 border-white/80 bg-white shadow-lg sm:w-24">
-            <Image
-              src={logo}
-              alt={`Logo ${judul}`}
-              fill
-              sizes="96px"
-              className="object-cover"
-              unoptimized={logo.endsWith(".svg")}
-            />
-          </span>
-        ) : null}
-        <h1 className="max-w-4xl text-3xl font-bold tracking-tight sm:text-5xl">
-          {judul}
-        </h1>
-        <p className="max-w-2xl text-base text-green-50 sm:text-xl">
-          {tagline}
-        </p>
-        {tombol ? (
-          <Link
-            href={tombol.href}
-            className="rounded-lg bg-white px-5 py-3 font-semibold text-green-900 transition hover:bg-green-100"
-          >
-            {tombol.label}
-          </Link>
-        ) : null}
+    <Container className="pt-4">
+      <div className="relative aspect-video overflow-hidden bg-line lg:aspect-[8/3]">
+        <Image
+          src={gambar}
+          alt={`Pemandangan ${judul}`}
+          fill
+          sizes="(max-width: 1280px) 100vw, 1280px"
+          className="object-cover"
+          unoptimized={gambar.endsWith(".svg")}
+          priority
+        />
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy/90 via-navy/50 to-transparent px-5 pb-4 pt-12 text-white sm:px-8 sm:pb-6 sm:pt-16">
+          <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <h1 className="font-heading text-xl font-bold sm:text-4xl">
+                {judul}
+              </h1>
+              <p className="mt-1 text-xs text-white/90 sm:text-base">
+                {tagline}
+              </p>
+            </div>
+            {tombol ? (
+              <Link
+                href={tombol.href}
+                className="shrink-0 rounded bg-accent px-3 py-2 text-sm font-bold text-navy transition hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:px-4 sm:text-base"
+              >
+                {tombol.label}
+              </Link>
+            ) : null}
+          </div>
+        </div>
       </div>
-    </section>
+    </Container>
   );
 }

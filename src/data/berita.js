@@ -3,6 +3,7 @@ export const berita = [
   {
     id: "pengumuman-informasi-sekolah-oktober",
     judul: "Pengumuman Informasi Sekolah",
+    kategori: "PENGUMUMAN",
     tanggal: "2026-10-05",
     ringkasan:
       "Informasi kegiatan dan pengumuman sekolah dapat diperhatikan melalui saluran resmi sekolah.",
@@ -16,6 +17,7 @@ export const berita = [
   {
     id: "pengingat-tata-tertib-sekolah",
     judul: "Pengingat Tata Tertib Sekolah",
+    kategori: "TATA TERTIB",
     tanggal: "2026-09-22",
     ringkasan:
       "Mari membiasakan diri memahami dan mengikuti tata tertib yang berlaku di lingkungan sekolah.",
@@ -29,6 +31,7 @@ export const berita = [
   {
     id: "menjaga-kebersihan-lingkungan",
     judul: "Menjaga Kebersihan Lingkungan",
+    kategori: "LINGKUNGAN",
     tanggal: "2026-09-08",
     ringkasan:
       "Kebersihan lingkungan dapat dijaga bersama melalui kebiasaan sederhana dan kepedulian setiap warga sekolah.",
@@ -42,6 +45,7 @@ export const berita = [
   {
     id: "pengingat-kegiatan-belajar",
     judul: "Pengingat Kegiatan Belajar",
+    kategori: "KEGIATAN BELAJAR",
     tanggal: "2026-08-25",
     ringkasan:
       "Persiapan yang baik dan sikap saling menghargai mendukung suasana belajar yang nyaman.",
@@ -55,6 +59,7 @@ export const berita = [
   {
     id: "kepedulian-terhadap-lingkungan",
     judul: "Meningkatkan Kepedulian terhadap Lingkungan",
+    kategori: "LINGKUNGAN",
     tanggal: "2026-08-11",
     ringkasan:
       "Kepedulian terhadap lingkungan dapat dimulai dari kebiasaan sehari-hari di sekitar kita.",
@@ -68,6 +73,7 @@ export const berita = [
   {
     id: "informasi-saluran-komunikasi",
     judul: "Informasi Saluran Komunikasi",
+    kategori: "KOMUNIKASI SEKOLAH",
     tanggal: "2026-07-28",
     ringkasan:
       "Gunakan saluran komunikasi resmi sekolah untuk memperoleh informasi yang tepat.",

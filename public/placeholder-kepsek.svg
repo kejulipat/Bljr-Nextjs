@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" role="img" aria-labelledby="title">
+  <title id="title">Foto Kepala Sekolah</title>
+  <rect width="600" height="800" fill="#e5e7eb"/>
+  <circle cx="300" cy="260" r="120" fill="#9ca3af"/>
+  <path d="M90 760c12-190 92-300 210-300s198 110 210 300" fill="#9ca3af"/>
+  <text x="300" y="720" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#374151">Foto Kepala Sekolah</text>
+</svg>

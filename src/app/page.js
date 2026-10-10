@@ -1,93 +1,93 @@
 import Link from "next/link";
-import BeritaCard from "@/components/BeritaCard";
+import BeritaTerkini from "@/components/BeritaTerkini";
+import Container from "@/components/Container";
 import Hero from "@/components/Hero";
+import InfoBar from "@/components/InfoBar";
+import KepalaSekolahCard from "@/components/KepalaSekolahCard";
+import PetaLokasi from "@/components/PetaLokasi";
 import SectionTitle from "@/components/SectionTitle";
 import { berita } from "@/data/berita";
 import { school } from "@/data/school";
 
 export default function Home() {
-  const beritaTerbaru = berita.slice(0, 3);
-
   return (
     <>
       <Hero
         judul={school.identity.name}
         tagline={school.tagline}
         gambar={school.images.hero}
-        logo={school.images.logo}
         tombol={{ href: "/about", label: "Mengenal Sekolah" }}
       />
+      <InfoBar />
 
-      <div className="mx-auto max-w-7xl space-y-16 px-6 py-14 sm:py-20">
+      <div className="space-y-14 py-12 sm:py-16">
         <section
           aria-labelledby="sambutan-title"
-          className="rounded-2xl border border-green-100 bg-green-50 p-6 sm:p-10"
         >
-          <SectionTitle id="sambutan-title" judul="Sambutan Kepala Sekolah" />
-          <p
-            className="mt-5 max-w-3xl whitespace-pre-line leading-relaxed text-gray-700"
-          >
-            {school.sambutan.split("\n\n")[0]}
-          </p>
-          <p className="mt-4 font-semibold text-green-950">
-            {school.identity.principal}
-          </p>
+          <Container className="grid gap-6 lg:grid-cols-[300px_1fr]">
+            <KepalaSekolahCard />
+            <div className="rounded-lg bg-white p-6 shadow-sm sm:p-8">
+              <SectionTitle id="sambutan-title" judul="Sambutan Kepala Sekolah" />
+              <p className="mt-6 whitespace-pre-line leading-relaxed text-ink">
+                {school.sambutan.split("\n\n")[0]}
+              </p>
+            </div>
+          </Container>
         </section>
 
-        <section aria-labelledby="informasi-title" className="space-y-7">
-          <SectionTitle id="informasi-title" judul="Informasi Singkat" />
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {school.highlights.map((highlight) => (
-              <article
-                key={highlight.key}
-                className="rounded-2xl border border-green-100 bg-white p-5 shadow-sm"
+        <section aria-labelledby="informasi-title">
+          <Container className="space-y-6">
+            <SectionTitle id="informasi-title" judul="Informasi Singkat" />
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {school.highlights.map((highlight) => (
+                <article
+                  key={highlight.key}
+                  className="rounded-lg border-t-4 border-brand bg-white p-5 shadow-sm"
+                >
+                  <h3 className="font-heading text-lg font-bold text-navy">
+                    {highlight.value}
+                  </h3>
+                  {highlight.year !== "-" ? (
+                    <p className="mt-2 text-sm text-ink">{highlight.year}</p>
+                  ) : null}
+                </article>
+              ))}
+            </div>
+          </Container>
+        </section>
+
+        <section className="min-w-0 bg-surface">
+          <Container className="space-y-4">
+            <BeritaTerkini items={berita} />
+            <div className="flex justify-end">
+              <Link
+                href="/berita"
+                className="inline-flex w-fit rounded px-4 py-2 font-semibold text-link transition hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-link"
               >
-                <h3 className="font-semibold text-green-950">
-                  {highlight.value}
-                </h3>
-                {highlight.year !== "-" ? (
-                  <p className="mt-2 text-sm text-green-800">
-                    {highlight.year === "since 2017"
-                      ? "Sejak 2017"
-                      : highlight.year}
-                  </p>
-                ) : null}
-              </article>
-            ))}
-          </div>
+                Lihat Semua →
+              </Link>
+            </div>
+          </Container>
         </section>
 
-        <section aria-labelledby="berita-title" className="space-y-7">
-          <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
-            <SectionTitle id="berita-title" judul="Berita Terbaru" />
+        <section>
+          <Container className="flex flex-col items-center justify-between gap-5 rounded-lg bg-navy p-7 text-center text-white sm:flex-row sm:text-left">
+            <div>
+              <h2 className="text-2xl font-bold">Informasi Sekolah</h2>
+              <p className="mt-2 text-white/90">
+                Kenali profil, visi, dan misi sekolah.
+              </p>
+            </div>
             <Link
-              href="/berita"
-              className="inline-flex w-fit rounded-lg border border-green-800 px-4 py-2 font-semibold text-green-900 transition hover:bg-green-50"
+              href="/about"
+              className="rounded bg-accent px-5 py-3 font-bold text-navy transition hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
-              Lihat Semua Berita
+              Tentang Sekolah
             </Link>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {beritaTerbaru.map((item) => (
-              <BeritaCard key={item.id} berita={item} />
-            ))}
-          </div>
+          </Container>
         </section>
 
-        <section className="flex flex-col items-center justify-between gap-5 rounded-2xl bg-green-900 p-7 text-center text-white sm:flex-row sm:text-left">
-          <div>
-            <h2 className="text-2xl font-bold">Informasi Sekolah</h2>
-            <p className="mt-2 text-green-100">
-              Kenali profil, visi, dan misi sekolah.
-            </p>
-          </div>
-          <Link
-            href="/about"
-            className="rounded-lg bg-white px-5 py-3 font-semibold text-green-900 transition hover:bg-green-100"
-          >
-            Tentang Sekolah
-          </Link>
-        </section>
+        <PetaLokasi />
       </div>
     </>
   );
